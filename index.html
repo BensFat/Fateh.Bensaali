@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fateh BENSAALI — Ingénieur Réseaux & Systèmes</title>
+    <!-- FontAwesome for Icons matching your LaTeX build -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --accent: #1A3A5C;
+            --highlight: #2E7BB4;
+            --lightgray: #F4F6F9;
+            --textgray: #444444;
+            --rulegray: #CBD5E1;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: var(--textgray);
+            background-color: #f8fafc;
+            padding: 2rem 1rem;
+        }
+
+        .cv-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            border-radius: 4px;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        header h1 span {
+            color: var(--highlight);
+        }
+
+        .title {
+            font-size: 1.25rem;
+            color: var(--textgray);
+            margin-top: 0.25rem;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .contact-info a {
+            color: var(--textgray);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: var(--highlight);
+        }
+
+        .contact-info i {
+            color: var(--highlight);
+            margin-right: 0.4rem;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: var(--rulegray);
+            margin: 1.5rem 0;
+        }
+
+        /* Profile Summary */
+        .profile {
+            text-align: justify;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        /* Two Column Layout */
+        .cv-body {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 2.5rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding-bottom: 0.25rem;
+            border-bottom: 2px solid var(--rulegray);
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1rem;
+            color: var(--accent);
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0.5rem;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
+        }
+
+        ul li::before {
+            content: "•";
+            color: var(--highlight);
+            font-size: 1.1rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        /* Right Column Specific Styles */
+        .exp-entry {
+            margin-bottom: 1.5rem;
+        }
+
+        .exp-header {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-date {
+            color: var(--highlight);
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .exp-title {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .exp-title span {
+            font-weight: 400;
+            font-style: italic;
+            font-size: 0.85rem;
+        }
+
+        .exp-location {
+            color: var(--textgray);
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        .exp-location i {
+            margin-right: 0.2rem;
+        }
+
+        .edu-entry {
+            margin-bottom: 1.2rem;
+        }
+
+        .edu-date {
+            color: var(--highlight);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .edu-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #000;
+        }
+
+        .edu-school {
+            font-size: 0.85rem;
+            color: var(--textgray);
+            margin-top: 0.1rem;
+        }
+
+        .lang-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .lang-table td {
+            padding: 0.3rem 0;
+        }
+
+        .lang-table td:first-child {
+            font-weight: 700;
+            width: 35%;
+        }
+
+        /* Responsive Breakpoint for Mobile Devices */
+        @media (max-width: 768px) {
+            .cv-body {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .cv-container {
+                padding: 1.2rem;
+            }
+            .exp-header {
+                grid-template-columns: 1fr;
+                gap: 0.2rem;
+            }
+            .exp-location {
+                order: -1;
+            }
+        }
+
+        /* Print Media Styles to look like the LaTeX Output on paper */
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            .cv-container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+            .cv-body {
+                grid-template-columns: 1fr 1.5fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="cv-container">
+    <!-- HEADER -->
+    <header>
+        <h1>Fateh <span>BENSAALI</span></h1>
+        <div class="title">Ingénieur Réseaux & Systèmes</div>
+        <div class="contact-info">
+            <a href="tel:+213558760358"><i class="fa-solid fa-phone"></i>+213 558 760 358</a>
+            <a href="mailto:fatehbensaali@gmail.com"><i class="fa-solid fa-envelope"></i>fatehbensaali@gmail.com</a>
+            <span><i class="fa-solid fa-map-marker-alt"></i>Alger, Algérie</span>
+            <a href="https://www.linkedin.com/in/fateh-bensaali/" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+        </div>
+    </header>
+
+    <hr style="height: 2px; background: var(--rulegray);">
+
+    <!-- PROFILE SUMMARY -->
+    <p class="profile">
+        Administrateur réseau et systèmes expérimenté, avec une solide formation technique et une forte passion
+        pour l'informatique et les nouvelles technologies. Compétent dans la gestion des environnements réseaux,
+        hardware et software, notamment le déploiement et la migration de parcs informatiques sous Windows.
+        Reconnu pour sa rigueur, sa capacité à travailler en équipe et à mener plusieurs projets simultanément.
+    </p>
+
+    <!-- TWO COLUMN BODY -->
+    <div class="cv-body">
+        
+        <!-- LEFT COLUMN -->
+        <div class="left-col">
+            <section>
+                <h2>Compétences Techniques</h2>
+                
+                <h3>Systèmes d'exploitation</h3>
+                <ul>
+                    <li>Red Hat, CentOS, AlmaLinux</li>
+                    <li>Windows Server 2016 / 2019 / 2022</li>
+                </ul>
+
+                <h3>Linux & Automatisation</h3>
+                <ul>
+                    <li>Ansible (playbooks, rôles, inventaires)</li>
+                    <li>Scripting Shell (Bash)</li>
+                    <li>Mises à jour Linux via Red Hat Satellite</li>
+                    <li>Haute Disponibilité (HA) : Pacemaker, Corosync</li>
+                </ul>
+
+                <h3>Virtualisation & Conteneurs</h3>
+                <ul>
+                    <li>VMware ESXi, vCenter</li>
+                    <li>Docker, Red Hat OpenShift, Satellite</li>
+                </ul>
+
+                <h3>Sauvegarde & Stockage</h3>
+                <ul>
+                    <li>Veritas Backup Exec, Veeam B&R</li>
+                    <li>HPE Primera, Alletra, 3Par</li>
+                    <li>DELL Unity, DELL ML3 / ML2000 / ML6000</li>
+                </ul>
+
+                <h3>Serveurs</h3>
+                <ul>
+                    <li>HPE C7000, HPE Synergy</li>
+                    <li>DELL PowerEdge</li>
+                </ul>
+
+                <h3>Réseaux</h3>
+                <ul>
+                    <li>DNS, DHCP, VLAN, WAN, TCP/IP</li>
+                    <li>SMTP, RAID, NAT, FTP</li>
+                    <li>Routing, Switching, Firewall</li>
+                    <li>Cisco, Huawei, Fortinet, F5</li>
+                </ul>
+
+                <h3>Gestion & Supervision</h3>
+                <ul>
+                    <li>Zabbix, IPAM, IPA</li>
+                    <li>Active Directory, GPO, SCCM, PowerShell</li>
+                </ul>
+
+                <h3>Langages</h3>
+                <ul>
+                    <li>Java, C#, C++, C</li>
+                    <li>HTML, CSS, JavaScript</li>
+                    <li>Python, Django, SQL</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Langues</h2>
+                <table class="lang-table">
+                    <tr><td>Français</td><td>Lu / Parlé / Écrit</td></tr>
+                    <tr><td>Anglais</td><td>Lu / Parlé / Écrit</td></tr>
+                </table>
+            </section>
+
+            <section>
+                <h2>Certifications</h2>
+                <ul>
+                    <li>HCIA – Routing & Switching</li>
+                    <li>Cisco CCNA 200-301</li>
+                    <li>Cisco CCNP Enterprise Training</li>
+                    <li>MCSA: Windows Server 2023 Administration</li>
+                    <li>Formation Alcatel-Lucent OmniPCX Enterprise Administration</li>
+                    <li>ISO 27001:2013</li>
+                    <li>Nutanix Private Cloud Bootcamp</li>
+                    <li>AZ-104: Microsoft Azure Administrator Exam Prep (Avr. 2023)</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="right-col">
+            <section>
+                <h2>Expériences Professionnelles</h2>
+
+                <!-- Entry 1 -->
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <span class="exp-date">Avr. 2023 – Présent</span>
+                        <span class="exp-title">System Engineer <span>— Natixis Algérie</span></span>
+                        <span class="exp-location"><i class="fa-solid fa-map-marker-alt"></i>Alger, Algérie</span>
+                    </div>
+                    <ul>
+                        <li>Gestion, configuration et supervision des serveurs et systèmes IT pour garantir une performance optimale.</li>
+                        <li>Administration réseau : gestion et dépannage des switches, routeurs et pare-feux.</li>
+                        <li>Mise en œuvre et suivi des stratégies de sauvegarde et de reprise après sinistre.</li>
+                        <li>Application et maintien des politiques de sécurité ; veille proactive sur les vulnérabilités.</li>
+                        <li>Déploiement des infrastructures de transmission de données.</li>
+                        <li>Support de 2<sup>e</sup> et 3<sup>e</sup> niveau pour les incidents systèmes.</li>
+                        <li>Contribution aux projets bancaires par le choix et la mise en œuvre de solutions techniques.</li>
+                        <li>Maintien de la cartographie des actifs et planification du renouvellement de l'infrastructure.</li>
+                        <li>Administration de l'Active Directory, DNS, DHCP, GPO, et migration des rôles FSMO.</li>
+                        <li>Mise à niveau des OS serveurs via Red Hat Satellite, gestion VMware ESXi / vCenter.</li>
+                        <li>Automatisation des tâches d'administration via Ansible et scripts Shell (Bash).</li>
+                        <li>Mise en place et gestion de clusters en Haute Disponibilité (HA).</li>
+                    </ul>
+                </div>
+
+                <!-- Entry 2 -->
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <span class="exp-date">Fév. 2020 – Avr. 2023</span>
+                        <span class="exp-title">Administrateur Systèmes <span>— INCT</span></span>
+                        <span class="exp-location"><i class="fa-solid fa-map-marker-alt"></i>Alger, Algérie</span>
+                    </div>
+                    <ul>
+                        <li>Gestion, administration et optimisation de l’infrastructure serveurs.</li>
+                        <li>Maîtrise des opérations de sauvegarde, restauration et archivage.</li>
+                        <li>Administration et résolution des incidents liés aux services : Active Directory, DNS, DHCP, GPO, FTP, messagerie, serveurs d’impression et de fichiers.</li>
+                        <li>Mise à niveau des systèmes d’exploitation serveurs vers les versions validées (préparation, réinstallation, migration des données et des rôles FSMO : impression, partage, DHCP, DNS).</li>
+                        <li>Supervision et contrôle des sauvegardes (serveurs, bases de données, postes utilisateurs).</li>
+                        <li>Configuration et déploiement des équipements informatiques.</li>
+                        <li>Gestion du parc informatique.</li>
+                        <li>Veille technologique continue.</li>
+                        <li>Virtualisation : VMware ESXi 6.0, VMware vCenter Server.</li>
+                        <li>Garantie de la continuité de service.</li>
+                        <li>Gestion des incidents, des changements et des problèmes.</li>
+                    </ul>
+                </div>
+
+                <!-- Entry 3 -->
+                <div class="exp-entry">
+                    <div class="exp-header">
+                        <span class="exp-date">Sept. 2017 – Fév. 2020</span>
+                        <span class="exp-title">Développeur Web <span>— Freelancer</span></span>
+                        <span class="exp-location"><i class="fa-solid fa-map-marker-alt"></i>Alger, Algérie</span>
+                    </div>
+                    <ul>
+                        <li>Conception et développement d'interfaces utilisateur responsives (HTML, CSS, JavaScript).</li>
+                        <li>Conception et maintenance de backends robustes avec Python, Django et SQL.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Formations Académiques</h2>
+                
+                <div class="edu-entry">
+                    <div class="edu-date">2017 – 2019</div>
+                    <div class="edu-title">Master — Réseaux et Systèmes Distribués</div>
+                    <div class="edu-school"><i class="fa-solid fa-university"></i> Université des Sciences et de la Technologie Houari Boumédiène, Alger</div>
+                </div>
+
+                <div class="edu-entry">
+                    <div class="edu-date">2015 – 2017</div>
+                    <div class="edu-title">Licence — Génie des Télécommunications et Réseaux</div>
+                    <div class="edu-school"><i class="fa-solid fa-university"></i> Université des Sciences et de la Technologie Houari Boumédiène, Alger</div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
