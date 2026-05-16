@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fateh BENSAALI — Ingénieur Réseaux & Systèmes</title>
-    <!-- Modern Font Inter & JetBrains Mono for a crisp tech feel -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <!-- FontAwesome for precise, clean UI icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -169,7 +167,7 @@
         .lang-bar {
             margin-bottom: 0.75rem;
             font-size: 0.85rem;
-            }
+        }
 
         .lang-name {
             display: flex;
@@ -385,7 +383,7 @@
 
         .edu-date {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
+            font-size: 0.8`rem;
             color: var(--brand-accent);
             font-weight: 600;
             margin-bottom: 0.5rem;
@@ -435,7 +433,6 @@
 
 <div class="portfolio-wrapper">
     
-    <!-- LEFT COLUMN PANEL -->
     <aside>
         <div class="profile-card">
             <h1>Fateh <span>BENSAALI</span></h1>
@@ -478,30 +475,36 @@
         </div>
     </aside>
 
-    <!-- RIGHT MAIN PANELS -->
     <main>
-        <!-- BIO CARD -->
         <div class="card profile-summary">
             Administrateur réseau et systèmes expérimenté, avec une solide formation technique et une forte passion
             pour l'informatique et les nouvelles technologies. Compétent dans la gestion des environnements réseaux,
-            hardware et software, notamment le déploiement et la migration de parcs informatiques sous Windows.
+            hardware et software, notamment le déploiement, l'upgrade et la migration d'infrastructures d'entreprise.
             Reconnu pour sa rigueur, sa capacité à travailler en équipe et à mener plusieurs projets simultanément.
         </div>
 
-        <!-- SKILLS CARD -->
         <div class="card">
             <h2 class="section-title"><i class="fa-solid fa-gears"></i> Compétences Techniques</h2>
             <div class="skills-grid">
                 
                 <div class="skill-category">
+                    <h3>Conteneurs & Cloud Infra</h3>
+                    <div class="tag-cloud">
+                        <span class="tag" style="background: #fef2f2; color: #991b1b; border-color: #fca5a5; font-weight: 600;">Red Hat OpenShift (OCP)</span>
+                        <span class="tag">Kubernetes Core Infrastructure</span>
+                        <span class="tag">Docker Daemon</span>
+                        <span class="tag">OCP Cluster Logging / Fluentd</span>
+                        <span class="tag">CoreOS Core Orchestration</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
                     <h3>Virtualisation & VDI</h3>
                     <div class="tag-cloud">
-                        <span class="tag" style="background: #e0f2fe; color: #0369a1; border-color: #bae6fd;">VMware Horizon</span>
+                        <span class="tag" style="background: #e0f2fe; color: #0369a1; border-color: #bae6fd;">VMware Horizon (Deploy/Config)</span>
                         <span class="tag" style="background: #e0f2fe; color: #0369a1; border-color: #bae6fd;">Workspace ONE</span>
                         <span class="tag">VMware ESXi</span>
-                        <span class="tag">vCenter Server</span>
-                        <span class="tag">Red Hat OpenShift (OCP)</span>
-                        <span class="tag">Docker</span>
+                        <span class="tag">vCenter Server Systems</span>
                     </div>
                 </div>
 
@@ -520,7 +523,7 @@
                     <div class="tag-cloud">
                         <span class="tag">Ansible Engine</span>
                         <span class="tag">Bash Scripting</span>
-                        <span class="tag">RH Satellite</span>
+                        <span class="tag">RH Satellite Services</span>
                         <span class="tag">Pacemaker / Corosync HA</span>
                     </div>
                 </div>
@@ -564,19 +567,16 @@
                         <span class="tag">Django</span>
                         <span class="tag">SQL</span>
                         <span class="tag">Java / C# / C++</span>
-                        <span class="tag">HTML5 / CSS3 / JavaScript</span>
                     </div>
                 </div>
 
             </div>
         </div>
 
-        <!-- EXPERIENCES CARD -->
         <div class="card">
             <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Expériences Professionnelles</h2>
             <div class="timeline">
                 
-                <!-- JOB 1 -->
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-header">
@@ -588,20 +588,19 @@
                     </div>
                     <div class="timeline-content">
                         <ul>
-                            <li>Déploiement et configuration complète de l'architecture VDI VMware Horizon(Connection Servers, Unified Access Gateways (UAG), pools d'accès instantanés et persistants).</li>
-                            <li>Intégration et administration de VMware Workspace ONE pour la gestion unifiée des terminaux, le contrôle des accès conditionnels et la publication sécurisée du catalogue applicatif.</li>
-                            <li>Gestion, configuration et supervision fine des infrastructures serveurs pour maintenir une haute disponibilité bancaire.</li>
-                            <li>Administration réseau avancée : routage, commutation et dépannage sur équipements Cisco, Huawei et firewalls Fortinet.</li>
-                            <li>Conception et suivi opérationnel des plans de sauvegarde et de reprise après sinistre (Veeam B&R, Veritas).</li>
-                            <li>Mise en conformité des systèmes vis-à-vis des politiques de sécurité et traitement proactif des vulnérabilités.</li>
-                            <li>Support expert de niveau 2 et 3 sur les incidents complexes liés aux infrastructures systèmes et de virtualisation.</li>
-                            <li>Administration globale des annuaires Active Directory, DNS, DHCP, GPOs d'entreprise et opérations de migration de rôles FSMO.</li>
-                            <li>Automatisation avancée du provisionnement et du cycle de vie des serveurs Linux via des playbooks Ansible et scripts Bash.</li>
+                            <li><strong>Ingénierie Infrastructure Red Hat OpenShift (OCP) :</strong> Déploiement complet de clusters de conteneurs, gestion du cycle de vie, upgrades de plateformes, troubleshooting système profond (analyse fine des logs via journalisation d'infrastructure, blocages bootstrap, état des noeuds CoreOS).</li>
+                            <li><strong>Déploiement et configuration complète de l'architecture VDI VMware Horizon :</strong> Initialisation de Connection Servers, passerelles Unified Access Gateways (UAG), création et maintenance de pools de bureaux virtuels instantanés ou persistants.</li>
+                            <li><strong>Intégration et administration de VMware Workspace ONE :</strong> Gestion unifiée des endpoints d'infrastructure, gestion fine des accès conditionnels et publication de catalogues applicatifs sécurisés.</li>
+                            <li>Gestion, configuration et supervision d'infrastructures serveurs hautement critiques pour garantir la continuité des services bancaires.</li>
+                            <li>Administration réseau avancée : configuration, segmentation réseau (VLAN) et diagnostic sur commutateurs/routeurs Cisco, Huawei et firewalls Fortinet.</li>
+                            <li>Mise en oeuvre, test et validation des stratégies de sauvegarde de données et plans de reprise d'activité (Veeam B&R, Veritas).</li>
+                            <li>Mise en conformité système selon les exigences de sécurité et traitement proactif des vulnérabilités.</li>
+                            <li>Support d'infrastructure expert de niveaux 2 et 3 sur des incidents systèmes et de virtualisation de haute complexité.</li>
+                            <li>Gestion et mise à niveau automatisée du parc serveurs Linux via des rôles/playbooks Ansible dédiés et scripts Bash.</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- JOB 2 -->
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-header">
@@ -622,7 +621,6 @@
                     </div>
                 </div>
 
-                <!-- JOB 3 -->
                 <div class="timeline-item">
                     <div class="timeline-marker"></div>
                     <div class="timeline-header">
@@ -643,7 +641,6 @@
             </div>
         </div>
 
-        <!-- CERTIFICATIONS CARD -->
         <div class="card">
             <h2 class="section-title"><i class="fa-solid fa-award"></i> Certifications & Formations Continues</h2>
             <div class="tag-cloud" style="gap: 0.6rem;">
@@ -658,7 +655,6 @@
             </div>
         </div>
 
-        <!-- EDUCATION CARD -->
         <div class="card">
             <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Formations Académiques</h2>
             <div class="edu-grid">
